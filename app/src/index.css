@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 88%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 88%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 88%;
+    --primary: 135 100% 50%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 263 70% 66%;
+    --secondary-foreground: 0 0% 88%;
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 135 100% 50%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 13%;
+    --input: 0 0% 13%;
+    --ring: 135 100% 50%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 88%;
+    --sidebar-primary: 135 100% 50%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 13%;
+    --sidebar-accent-foreground: 0 0% 88%;
+    --sidebar-border: 0 0% 13%;
+    --sidebar-ring: 135 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-dark-bg text-text-primary font-sans antialiased;
+    cursor: none;
+  }
+
+  ::selection {
+    background-color: rgba(0, 255, 65, 0.3);
+    color: #E0E0E0;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-green to-neon-cyan;
+  }
+
+  .border-neon {
+    @apply border border-neon-green/30 hover:border-neon-green/60 transition-colors duration-300;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5), 0 0 20px rgba(0, 255, 65, 0.3);
+  }
+
+  .glow-box {
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2), 0 0 40px rgba(0, 255, 65, 0.1);
+  }
+
+  .terminal-window {
+    @apply bg-dark-surface border border-dark-border rounded-lg overflow-hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 255, 65, 0.1);
+  }
+
+  .terminal-header {
+    @apply bg-dark-card px-4 py-2 flex items-center gap-2 border-b border-dark-border;
+  }
+
+  .terminal-dot {
+    @apply w-3 h-3 rounded-full;
+  }
+
+  .terminal-body {
+    @apply p-4 font-mono text-sm text-text-primary;
+  }
+
+  .skill-bar {
+    @apply h-2 bg-dark-border rounded-full overflow-hidden;
+  }
+
+  .skill-fill {
+    @apply h-full bg-gradient-to-r from-neon-green to-neon-cyan rounded-full;
+    transition: width 1s ease-out;
+  }
+
+  .project-card {
+    @apply bg-dark-surface border border-dark-border rounded-lg overflow-hidden transition-all duration-300;
+  }
+
+  .project-card:hover {
+    @apply border-neon-green/50;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.15);
+  }
+
+  .nav-link {
+    @apply relative font-mono text-sm text-text-muted hover:text-neon-green transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-neon-green transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .tech-tag {
+    @apply px-3 py-1 text-xs font-mono border border-neon-green/30 text-neon-green/80 rounded-full;
+  }
+
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom cursor styles */
+.cursor-dot {
+  @apply fixed w-1 h-1 bg-neon-green rounded-full pointer-events-none z-[9999];
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  @apply fixed w-8 h-8 border border-neon-green/50 rounded-full pointer-events-none z-[9998];
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, border-color 0.2s;
+}
+
+.cursor-ring.expanded {
+  @apply w-12 h-12 border-neon-green;
+}
+
+/* Hide cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    cursor: auto !important;
+  }
+  
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
