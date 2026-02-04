@@ -86,8 +86,8 @@ pnpm lint
 
 ## Licença
 
-Uso pessoal/portfólio. Para reutilizar layout ou trechos, entre em contato.
+Uso público/portfólio. Livre para reutilizar layout ou trecho   s. Demais informações entre em contato.
 
 ---
 
-**Nelson Emeliano** — [LinkedIn](https://linkedin.com/in/nelsonemeliano) | [GitHub](https://github.com/nelsonemeliano)
+**Nelson Emeliano** — [LinkedIn](https://www.linkedin.com/in/nelson-emeliano-b09576133/) | [GitHub](https://github.com/Nelson-esilva)
