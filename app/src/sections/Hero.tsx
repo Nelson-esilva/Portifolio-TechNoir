@@ -6,7 +6,7 @@ import gsap from 'gsap';
 const ROLES = [
   'Desenvolvedor Full Stack',
   'Especialista em Machine Learning',
-  'Engenheiro de Sistemas Embarcados',
+  'Engenheiro Eletrônico',
   'Entusiasta de Visão Computacional',
 ];
 
