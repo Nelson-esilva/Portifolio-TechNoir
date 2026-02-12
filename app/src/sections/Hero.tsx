@@ -180,28 +180,6 @@ export const Hero = () => {
               <DownloadCVButton variant="outline" />
             </div>
 
-            {/* Social links */}
-            <div data-hero-animate className="flex items-center gap-5">
-              <span className="text-xs text-text-muted uppercase tracking-wider">Me encontre em</span>
-              <div className="h-px w-8 bg-dark-border" />
-              {[
-                { Icon: Github, href: 'https://github.com/NelsonEmelworthy', label: 'GitHub' },
-                { Icon: Linkedin, href: 'https://linkedin.com/in/nelsonemeliano', label: 'LinkedIn' },
-                { Icon: Mail, href: 'mailto:nelson@email.com', label: 'E-mail' },
-              ].map(({ Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="group p-2 rounded-lg border border-dark-border text-text-muted hover:text-neon-green hover:border-neon-green/40 hover:bg-neon-green/5 hover:shadow-[0_0_12px_rgba(0,255,65,0.12)] transition-all"
-                  data-cursor-hover
-                >
-                  <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* ═══════ RIGHT COLUMN — CODE CARD ═══════ */}

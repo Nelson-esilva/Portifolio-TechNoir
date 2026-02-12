@@ -52,14 +52,14 @@ export const Contact = () => {
 
           {/* Contact Info */}
           <div
-            className={`grid sm:grid-cols-3 gap-6 mb-12 transition-all duration-700 delay-150 ${
+            className={`flex flex-col sm:flex-row justify-center gap-6 mb-12 sm:max-w-none sm:mx-[-3rem] transition-all duration-700 delay-150 ${
               isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
             {CONTACT_INFO.map((item) => (
               <div
                 key={item.label}
-                className={`group p-4 bg-dark-card border border-dark-border rounded-lg transition-all ${
+                className={`group p-4 bg-dark-card border border-dark-border rounded-lg transition-all min-w-0 ${
                   item.href ? 'hover:border-neon-green/50 hover:shadow-[0_0_20px_rgba(0,255,65,0.08)]' : ''
                 }`}
                 data-cursor-hover
@@ -71,13 +71,13 @@ export const Contact = () => {
                     href={item.href}
                     target={item.href.startsWith('http') ? '_blank' : undefined}
                     rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="inline-flex items-center gap-1.5 text-sm text-text-primary group-hover:text-neon-green transition-colors font-mono underline decoration-dark-border underline-offset-4 group-hover:decoration-neon-green/40"
+                    className="inline-flex items-center justify-center gap-1.5 text-sm text-text-primary group-hover:text-neon-green transition-colors font-mono whitespace-nowrap underline decoration-dark-border underline-offset-4 group-hover:decoration-neon-green/40"
                   >
                     {item.value}
-                    <ExternalLink className="w-3 h-3 opacity-40 group-hover:opacity-100 transition-opacity" />
+                    <ExternalLink className="w-3 h-3 shrink-0 opacity-40 group-hover:opacity-100 transition-opacity" />
                   </a>
                 ) : (
-                  <p className="text-sm text-text-primary font-mono">{item.value}</p>
+                  <p className="text-sm text-text-primary font-mono whitespace-nowrap">{item.value}</p>
                 )}
               </div>
             ))}
@@ -90,7 +90,7 @@ export const Contact = () => {
             }`}
           >
             <a
-              href="mailto:nelson_em@outlook.com"
+              href="mailto:nelson.silvaem@gmail.com"
               className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-neon-green text-dark-bg font-mono font-semibold rounded hover:bg-neon-green/90 transition-colors"
               data-cursor-hover
             >
@@ -117,7 +117,7 @@ export const Contact = () => {
               <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/nelson-emeliano-b09576133/"
               target="_blank"
               rel="noopener noreferrer"
               className="group p-3 bg-dark-card border border-dark-border rounded-full text-text-muted hover:text-neon-green hover:border-neon-green/50 hover:shadow-[0_0_15px_rgba(0,255,65,0.15)] transition-all"
@@ -127,7 +127,7 @@ export const Contact = () => {
               <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </a>
             <a
-              href="mailto:nelson_em@outlook.com"
+              href="mailto:nelson.silvaem@gmail.com"
               className="group p-3 bg-dark-card border border-dark-border rounded-full text-text-muted hover:text-neon-green hover:border-neon-green/50 hover:shadow-[0_0_15px_rgba(0,255,65,0.15)] transition-all"
               data-cursor-hover
               aria-label="Email"

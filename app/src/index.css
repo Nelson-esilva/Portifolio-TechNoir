@@ -110,7 +110,7 @@
   }
 
   .nav-link {
-    @apply relative font-mono text-sm text-text-muted hover:text-neon-green transition-colors duration-300;
+    @apply relative font-mono text-sm text-neon-green hover:text-neon-green/80 transition-colors duration-300;
   }
 
   .nav-link::after {

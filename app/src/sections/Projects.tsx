@@ -4,36 +4,56 @@ import { useInView } from '@/hooks/useInView';
 
 const PROJECTS = [
   {
-    title: 'Detecção de Objetos YOLOv8',
+    title: 'Sistema de Detecção de Quedas com IA',
     description:
-      'Sistema de visão computacional para inspeção industrial em tempo real. Detecta defeitos em linhas de produção com alta precisão usando redes neurais convolucionais.',
-    image: '/project-yolo.jpg',
-    tags: ['Python', 'OpenCV', 'YOLOv8', 'PyTorch'],
-    githubUrl: 'https://github.com/Nelson-esilva',
+      'Detecção de quedas em tempo real usando arquitetura híbrida CNN (MobileNetV2) + LSTM. Integração com ESP32 para alertas locais via buzzer e LEDs. Projeto de Iniciação Científica PAIC/FAPEAM - UEA.',
+    image: '/project-fall-detect.jpg',
+    tags: ['Python', 'PyTorch', 'OpenCV', 'ESP32'],
+    githubUrl: 'https://github.com/Nelson-esilva/Fall-Detect-System',
   },
   {
-    title: 'Sistema MES Industrial',
+    title: 'Análise de Formas na Linha de Produção',
     description:
-      'Sistema de Execução de Manufatura integrado a linhas de produção. Monitora OEE, rastreabilidade e qualidade em tempo real.',
-    image: '/project-mes.jpg',
-    tags: ['Django', 'PostgreSQL', 'Docker', 'React'],
-    githubUrl: 'https://github.com/Nelson-esilva',
+      'Sistema de inspeção automatizada para identificar formas geométricas e detectar deformações em latas na linha de produção. Utiliza YOLOv8 para detecção de objetos em tempo real. Projeto STEM - UEA.',
+    image: '/project-yolo-stem.jpg',
+    tags: ['Python', 'YOLOv8', 'OpenCV'],
+    githubUrl: 'https://github.com/Nelson-esilva/Anlise-de-Formas-Linha-de-Producao-STEM-UEA',
   },
   {
-    title: 'Monitoramento Energético IoT',
+    title: 'TrocaMat - Plataforma de Troca de Materiais',
     description:
-      'Dashboard em tempo real para análise de consumo energético industrial. Integração com sensores via MQTT e visualização de métricas.',
-    image: '/project-iot.jpg',
-    tags: ['React', 'Node.js', 'MQTT', 'InfluxDB'],
-    githubUrl: 'https://github.com/Nelson-esilva',
+      'Plataforma fullstack para troca de materiais didáticos entre estudantes. Gestão de itens, sistema de ofertas, busca por categorias e autenticação. Deploy containerizado com Docker.',
+    image: '/project-trade-site.png',
+    tags: ['Django', 'React', 'PostgreSQL', 'Docker'],
+    githubUrl: 'https://github.com/Nelson-esilva/Trade-Site',
+    liveUrl: 'https://trade-site-frontend.vercel.app',
+    imageFit: 'cover' as const,
   },
   {
-    title: 'API de Predição com LSTMs',
+    title: 'OpenPLC Runtime - Automação Industrial',
     description:
-      'Modelo preditivo para forecast de consumo energético usando redes neurais recorrentes. API RESTful com baixa latência.',
-    image: '/project-lstm.jpg',
-    tags: ['PyTorch', 'FastAPI', 'Redis', 'Docker'],
-    githubUrl: 'https://github.com/Nelson-esilva',
+      'Análise e modificação do código open source do OpenPLC Runtime. Scripts de automação para simplificar instalação e uso do PLC por usuários sem experiência técnica. Pesquisa em sistemas embarcados - UNINTER.',
+    image: '/project-openplc.png',
+    tags: ['Python', 'Shell Script', 'OpenPLC', 'Sistemas Embarcados'],
+    githubUrl: 'https://github.com/Nelson-esilva/OpenPLC-Runtime',
+    imageFit: 'cover' as const,
+  },
+  {
+    title: 'Controle de Produção - Fábrica de Plásticos',
+    description:
+      'Sistema web para controle e monitoramento de produção industrial. Autenticação, cadastro de dados, filtros por período e geração de relatórios com gráficos interativos via Plotly e Chart.js.',
+    image: '/project-controle-produtivo.png',
+    tags: ['Flask', 'Python', 'SQLite', 'JavaScript'],
+    githubUrl: 'https://github.com/Nelson-esilva/Site-Controle-Produtivo',
+    liveUrl: 'https://tela-de-login-html.onrender.com',
+  },
+  {
+    title: 'Sistema MultiAgente - Simulação de Livraria',
+    description:
+      'Simulação de sistema multiagente em C com Pthread para execução concorrente. Agentes interagem para operações de compra, venda e gestão de estoque. Pesquisa apresentada à UFAM.',
+    image: '/project-multiagent.png',
+    tags: ['C', 'pthread', 'Sistemas Multiagente'],
+    githubUrl: 'https://github.com/Nelson-esilva/Research-MultiAgentSystem',
   },
 ];
 
@@ -65,11 +85,11 @@ export const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PROJECTS.map((project, index) => (
             <div
               key={project.title}
-              className={`transition-all duration-700 ${
+              className={`transition-all duration-700 h-full ${
                 isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
