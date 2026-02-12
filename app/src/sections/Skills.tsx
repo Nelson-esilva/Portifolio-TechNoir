@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { TextScramble } from '@/components/TextScramble';
 import { useInView } from '@/hooks/useInView';
+import { TechIcon, getTechColor } from '@/lib/techIcons';
 import { Code2, Brain, Server, Cpu, Layers } from 'lucide-react';
 
 /* ───────────── category data ───────────── */
@@ -196,20 +197,28 @@ export const Skills = () => {
                 {category.techs.map((tech) => (
                   <div
                     key={tech.name}
-                    className="group relative p-4 bg-dark-card border border-dark-border rounded-xl transition-all duration-300 hover:border-opacity-100 hover:-translate-y-1 cursor-default"
+                    className="group relative p-4 bg-dark-bg border border-dark-border rounded-xl transition-all duration-300 hover:border-opacity-100 hover:-translate-y-1 cursor-default"
                     onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.boxShadow = `0 0 25px ${category.glowColor}`;
-                      (e.currentTarget as HTMLElement).style.borderColor = category.glowColor.replace('0.15', '0.5');
+                      const color = getTechColor(tech.name);
+                      (e.currentTarget as HTMLElement).style.boxShadow = `0 0 25px ${color}25`;
+                      (e.currentTarget as HTMLElement).style.borderColor = `${color}60`;
                     }}
                     onMouseLeave={(e) => {
                       (e.currentTarget as HTMLElement).style.boxShadow = 'none';
                       (e.currentTarget as HTMLElement).style.borderColor = '';
                     }}
                   >
-                    <p className="font-mono text-sm font-medium text-text-primary group-hover:text-white transition-colors">
-                      {tech.name}
-                    </p>
-                    <p className="text-xs text-text-muted mt-1 leading-snug">
+                    <div className="flex items-center gap-2.5 mb-1.5">
+                      <TechIcon
+                        name={tech.name}
+                        className="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity"
+                        colored
+                      />
+                      <p className="font-mono text-sm font-medium text-text-primary group-hover:text-white transition-colors">
+                        {tech.name}
+                      </p>
+                    </div>
+                    <p className="text-xs text-text-muted leading-snug pl-[30px]">
                       {tech.description}
                     </p>
                   </div>

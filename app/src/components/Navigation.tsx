@@ -5,6 +5,9 @@ const NAV_LINKS = [
   { label: 'SOBRE', href: '#about' },
   { label: 'PROJETOS', href: '#projects' },
   { label: 'SKILLS', href: '#skills' },
+  { label: 'EXPERIÊNCIA', href: '#experience' },
+  { label: 'PESQUISA', href: '#research' },
+  { label: 'FORMAÇÃO', href: '#education' },
   { label: 'CONTATO', href: '#contact' },
 ];
 

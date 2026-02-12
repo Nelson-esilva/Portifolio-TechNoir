@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { ChevronDown, Github, Linkedin, Mail, Download, ArrowRight } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
+import { DownloadCVButton } from '@/components/DownloadCVButton';
 import gsap from 'gsap';
 
 /* ───────────── role switcher data ───────────── */
@@ -12,8 +13,8 @@ const ROLES = [
 
 /* ───────────── stats ───────────── */
 const STATS = [
-  { value: '5+', label: 'Anos de experiência' },
-  { value: '10+', label: 'Projetos entregues' },
+  { value: '3+', label: 'Anos de experiência' },
+  { value: '8+', label: 'Projetos desenvolvidos' },
   { value: '8+', label: 'Tecnologias dominadas' },
 ];
 
@@ -176,16 +177,7 @@ export const Hero = () => {
                 Ver projetos
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a
-                href="/cv-nelson-emeliano.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3 border border-dark-border text-text-primary font-semibold rounded-lg hover:border-neon-green/50 hover:bg-neon-green/5 transition-all"
-                data-cursor-hover
-              >
-                <Download className="w-4 h-4" />
-                Download CV
-              </a>
+              <DownloadCVButton variant="outline" />
             </div>
 
             {/* Social links */}
@@ -203,10 +195,10 @@ export const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="p-2 rounded-lg border border-dark-border text-text-muted hover:text-neon-green hover:border-neon-green/40 hover:bg-neon-green/5 transition-all"
+                  className="group p-2 rounded-lg border border-dark-border text-text-muted hover:text-neon-green hover:border-neon-green/40 hover:bg-neon-green/5 hover:shadow-[0_0_12px_rgba(0,255,65,0.12)] transition-all"
                   data-cursor-hover
                 >
-                  <Icon className="w-5 h-5" />
+                  <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>
               ))}
             </div>

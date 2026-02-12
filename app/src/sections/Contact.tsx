@@ -1,13 +1,14 @@
 import { TextScramble } from '@/components/TextScramble';
 import { useInView } from '@/hooks/useInView';
-import { Mail, Github, MapPin, Download, Linkedin } from 'lucide-react';
+import { Mail, Github, MapPin, Linkedin, ExternalLink } from 'lucide-react';
+import { DownloadCVButton } from '@/components/DownloadCVButton';
 
 const CONTACT_INFO = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'nelson_em@outlook.com',
-    href: 'mailto:nelson_em@outlook.com',
+    value: 'nelson.silvaem@gmail.com',
+    href: 'mailto:nelson.silvaem@gmail.com',
   },
   {
     icon: Github,
@@ -58,7 +59,9 @@ export const Contact = () => {
             {CONTACT_INFO.map((item) => (
               <div
                 key={item.label}
-                className="p-4 bg-dark-card border border-dark-border rounded-lg hover:border-neon-green/50 transition-colors"
+                className={`group p-4 bg-dark-card border border-dark-border rounded-lg transition-all ${
+                  item.href ? 'hover:border-neon-green/50 hover:shadow-[0_0_20px_rgba(0,255,65,0.08)]' : ''
+                }`}
                 data-cursor-hover
               >
                 <item.icon className="w-6 h-6 text-neon-green mx-auto mb-3" />
@@ -68,9 +71,10 @@ export const Contact = () => {
                     href={item.href}
                     target={item.href.startsWith('http') ? '_blank' : undefined}
                     rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="text-sm text-text-primary hover:text-neon-green transition-colors font-mono"
+                    className="inline-flex items-center gap-1.5 text-sm text-text-primary group-hover:text-neon-green transition-colors font-mono underline decoration-dark-border underline-offset-4 group-hover:decoration-neon-green/40"
                   >
                     {item.value}
+                    <ExternalLink className="w-3 h-3 opacity-40 group-hover:opacity-100 transition-opacity" />
                   </a>
                 ) : (
                   <p className="text-sm text-text-primary font-mono">{item.value}</p>
@@ -93,16 +97,7 @@ export const Contact = () => {
               <Mail className="w-5 h-5" />
               ENVIAR EMAIL
             </a>
-            <button
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-neon-green text-neon-green font-mono font-semibold rounded hover:bg-neon-green/10 transition-colors"
-              data-cursor-hover
-              onClick={() => {
-                alert('Currículo disponível em breve!');
-              }}
-            >
-              <Download className="w-5 h-5" />
-              BAIXAR CV
-            </button>
+            <DownloadCVButton variant="neon" label="BAIXAR CV" iconSize="w-5 h-5" />
           </div>
 
           {/* Social Links */}
@@ -115,29 +110,29 @@ export const Contact = () => {
               href="https://github.com/Nelson-esilva"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-dark-card border border-dark-border rounded-full text-text-muted hover:text-neon-green hover:border-neon-green/50 transition-all"
+              className="group p-3 bg-dark-card border border-dark-border rounded-full text-text-muted hover:text-neon-green hover:border-neon-green/50 hover:shadow-[0_0_15px_rgba(0,255,65,0.15)] transition-all"
               data-cursor-hover
               aria-label="GitHub"
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </a>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-dark-card border border-dark-border rounded-full text-text-muted hover:text-neon-green hover:border-neon-green/50 transition-all"
+              className="group p-3 bg-dark-card border border-dark-border rounded-full text-text-muted hover:text-neon-green hover:border-neon-green/50 hover:shadow-[0_0_15px_rgba(0,255,65,0.15)] transition-all"
               data-cursor-hover
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </a>
             <a
               href="mailto:nelson_em@outlook.com"
-              className="p-3 bg-dark-card border border-dark-border rounded-full text-text-muted hover:text-neon-green hover:border-neon-green/50 transition-all"
+              className="group p-3 bg-dark-card border border-dark-border rounded-full text-text-muted hover:text-neon-green hover:border-neon-green/50 hover:shadow-[0_0_15px_rgba(0,255,65,0.15)] transition-all"
               data-cursor-hover
               aria-label="Email"
             >
-              <Mail className="w-5 h-5" />
+              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </a>
           </div>
         </div>
