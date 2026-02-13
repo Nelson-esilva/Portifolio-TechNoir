@@ -178,6 +178,36 @@ export const Hero = () => {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <DownloadCVButton variant="outline" />
+              <div className="flex items-center gap-3 ml-2">
+                <a
+                  href="https://github.com/Nelson-esilva"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="group p-2 rounded-lg border border-dark-border text-text-muted hover:text-neon-green hover:border-neon-green/40 hover:shadow-[0_0_12px_rgba(0,255,65,0.12)] transition-all"
+                  data-cursor-hover
+                >
+                  <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                </a>
+                <a
+                  href="https://linkedin.com/in/nelsonemeliano"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="group p-2 rounded-lg border border-dark-border text-text-muted hover:text-neon-green hover:border-neon-green/40 hover:shadow-[0_0_12px_rgba(0,255,65,0.12)] transition-all"
+                  data-cursor-hover
+                >
+                  <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                </a>
+                <a
+                  href="mailto:nelson.silvaem@gmail.com"
+                  aria-label="Email"
+                  className="group p-2 rounded-lg border border-dark-border text-text-muted hover:text-neon-green hover:border-neon-green/40 hover:shadow-[0_0_12px_rgba(0,255,65,0.12)] transition-all"
+                  data-cursor-hover
+                >
+                  <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                </a>
+              </div>
             </div>
 
           </div>
