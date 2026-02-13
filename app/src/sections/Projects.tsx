@@ -55,6 +55,15 @@ const PROJECTS = [
     tags: ['C', 'pthread', 'Sistemas Multiagente'],
     githubUrl: 'https://github.com/Nelson-esilva/Research-MultiAgentSystem',
   },
+  {
+    title: 'ShopFlow MES - Manufacturing Execution System',
+    description:
+      'Sistema MES/MOM open-source para gestão e monitoramento de produção industrial em tempo real. Integra coleta de dados do chão de fábrica, rastreamento de ordens, análise de defeitos e dashboards analíticos via OLAP.',
+    image: '/project-mes.jpg',
+    tags: ['Django', 'React', 'PostgreSQL', 'ClickHouse', 'Kafka', 'Docker'],
+    githubUrl: 'https://github.com/Nelson-esilva/shopflow-devops',
+    imageFit: 'cover' as const,
+  },
 ];
 
 export const Projects = () => {
@@ -85,7 +94,7 @@ export const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {PROJECTS.map((project, index) => (
             <div
               key={project.title}
